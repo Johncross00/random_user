@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:random_user/screen/widgets/bottom_tab.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -21,7 +22,8 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
       ),
-      body: Container(
+      body: 
+      Container(
         color: Colors.grey,
         child: Column(
           children: [
@@ -146,6 +148,14 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: [
+      //     BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+      //     BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+      //     BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add'),
+      //   ],
+      // )
+      bottomNavigationBar: BottomTab(),
     );
   }
 }
