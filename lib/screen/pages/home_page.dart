@@ -156,6 +156,46 @@ class _HomePageState extends State<HomePage> {
       //   ],
       // )
       bottomNavigationBar: BotTab(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            _buildHeader(),
+            _buildItem(icon: Icons.home, title: 'Home', onTap: ()=> Navigator.pop(context)),
+            _buildItem(icon: Icons.notification_add, title: 'Notif', onTap: ()=> Navigator.pushNamed(context, 'Notifications')),
+            _buildItem(icon: Icons.person, title: 'Profile', onTap: ()=> Navigator.pop(context, 'Profile')),
+            _buildItem(icon: Icons.settings, title: 'Settings', onTap: ()=> Navigator.pop(context, 'Settings')),
+          ],
+        ),
+      ),
+    );
+  }
+  _buildHeader(){
+    return DrawerHeader(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(
+                    'assets/images/flutter.jpeg')
+            )
+        ),
+        child: Column(
+          children: [
+            CircleAvatar(
+              backgroundImage: AssetImage('assets/images/flutter.jpeg'),
+              radius: 40,
+            ),
+            SizedBox(height: 20,),
+            Text("John Cross")
+          ],
+        ));
+  }
+  _buildItem({
+    required IconData icon, required String title, required GestureTapCallback onTap}) {
+    return ListTile(
+      leading: Icon(icon),
+      title: Text(title),
+      onTap: onTap,
+      minLeadingWidth: 5,
     );
   }
 }
