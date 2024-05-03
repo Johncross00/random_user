@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:random_user/screen/widgets/bottom_tab.dart';
+import 'package:random_user/screen/widgets/bottomtab.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
       //     BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add'),
       //   ],
       // )
-      bottomNavigationBar: BottomTab(),
+      bottomNavigationBar: BotTab(),
     );
   }
 }

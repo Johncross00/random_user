@@ -9,7 +9,9 @@ class BotTab extends StatefulWidget {
 class _BotTabState extends State<BotTab> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
-    Container(color: Colors.blue,),
+    Container(color: Colors.blue, child: Center(child: FadeInImage(fadeInDuration: Duration(seconds: 5),
+        placeholder: AssetImage('assets/images/spotify.jpeg'),
+        image: AssetImage('assets/images/flutter.jpeg')))),
     Container(color: Colors.yellow,),
     Container(color: Colors.black,),
     Container(color: Colors.indigo,),
