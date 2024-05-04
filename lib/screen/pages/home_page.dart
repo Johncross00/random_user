@@ -50,49 +50,47 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 15), // Espace de 15 pixels
+            const SizedBox(height: 15), // Espace de 15 pixels
             Expanded(
-              child: Container(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    AnimatedOpacity(
-                      opacity: _visible ? 1.0 : 0.0,
-                      duration: Duration(seconds: 2),
-                      child: Container(
-                        width: 160,
-                        color: Colors.red,
-                      ),
-                    ),
-                    FloatingActionButton(
-                      onPressed: () {
-                        setState(() {
-                          _visible = !_visible;
-                        });
-                      },
-                      child: Icon(Icons.play_arrow),
-                    ),
-                    Container(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: <Widget>[
+                  AnimatedOpacity(
+                    opacity: _visible ? 1.0 : 0.0,
+                    duration: const Duration(seconds: 2),
+                    child: Container(
                       width: 160,
-                      color: Colors.blue,
+                      color: Colors.red,
                     ),
-                    Container(
-                      width: 160,
-                      color: Colors.green,
-                    ),
-                    AnimatedIcon(
-                        icon: AnimatedIcons.arrow_menu,
-                        progress: kAlwaysCompleteAnimation),
-                    Container(
-                      width: 160,
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      width: 160,
-                      color: Colors.orange,
-                    ),
-                  ],
-                ),
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        _visible = !_visible;
+                      });
+                    },
+                    child: const Icon(Icons.play_arrow),
+                  ),
+                  Container(
+                    width: 160,
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    width: 160,
+                    color: Colors.green,
+                  ),
+                  const AnimatedIcon(
+                      icon: AnimatedIcons.arrow_menu,
+                      progress: kAlwaysCompleteAnimation),
+                  Container(
+                    width: 160,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    width: 160,
+                    color: Colors.orange,
+                  ),
+                ],
               ),
             ),
             Expanded(
@@ -102,13 +100,10 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: GridView.count(
-                // Create a grid with 2 columns. If you change the scrollDirection to
-                // horizontal, this produces 2 rows.
                 crossAxisCount: 5,
                 mainAxisSpacing: 5,
                 crossAxisSpacing: 5,
                 scrollDirection: Axis.vertical,
-                // Generate 100 widgets that display their index in the List.
                 children: List.generate(100, (index) {
                   return Center(
                     child: Text(
@@ -122,53 +117,15 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-
-      bottomNavigationBar: BotTab(),
-      drawer: DrawerBut(),
+      bottomNavigationBar: const BotTab(),
+      drawer: const DrawerBut(),
     );
-    //     drawer: Drawer(
-    //       child: ListView(
-    //         children: [
-    //           _buildHeader(),
-    //           _buildItem(icon: Icons.home, title: 'Home', onTap: ()=> Navigator.pop(context)),
-    //           _buildItem(icon: Icons.notifications, title: 'Notif', onTap: ()=> Navigator.pushNamed(context, 'Notifications')),
-    //           _buildItem(icon: Icons.person, title: 'Profile', onTap: ()=> Navigator.pop(context, 'Profile')),
-    //           _buildItem(icon: Icons.settings, title: 'Settings', onTap: ()=> Navigator.pop(context, 'Settings')),
-    //         ],
-    //       ),
-    //     ),
-    //   );
-    // }
-    // _buildHeader(){
-    //   return DrawerHeader(
-    //     duration: Duration(seconds: 2),
-    //       curve: Easing.legacy,
-    //       child: Column(
-    //         children: [
-    //           CircleAvatar(
-    //             backgroundImage: AssetImage('assets/images/flutter.jpeg'),
-    //               radius: 40,
-    //           ),
-    //           SizedBox(height: 20,),
-    //           Text("John Cross")
-    //         ],
-    //       ));
-    // }
-    // _buildItem({
-    //   required IconData icon, required String title, required GestureTapCallback onTap}) {
-    //   return ListTile(
-    //     leading: Icon(icon),
-    //     title: Text(title),
-    //     onTap: onTap,
-    //     minLeadingWidth: 40,
-    //     splashColor: Colors.grey,
-    //   );
   }
 
   ListTile buildListTile() {
-    return ListTile(
-                  leading: Icon(Icons.ac_unit),
-                  title: Text("Example"),
-                );
+    return const ListTile(
+      leading: Icon(Icons.ac_unit),
+      title: Text("Example"),
+    );
   }
 }
