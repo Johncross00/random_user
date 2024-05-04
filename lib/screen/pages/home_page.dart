@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:random_user/screen/widgets/bottomtab.dart';
+import 'package:random_user/screen/widgets/drawer_but.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -156,46 +157,44 @@ class _HomePageState extends State<HomePage> {
       //   ],
       // )
       bottomNavigationBar: BotTab(),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            _buildHeader(),
-            _buildItem(icon: Icons.home, title: 'Home', onTap: ()=> Navigator.pop(context)),
-            _buildItem(icon: Icons.notification_add, title: 'Notif', onTap: ()=> Navigator.pushNamed(context, 'Notifications')),
-            _buildItem(icon: Icons.person, title: 'Profile', onTap: ()=> Navigator.pop(context, 'Profile')),
-            _buildItem(icon: Icons.settings, title: 'Settings', onTap: ()=> Navigator.pop(context, 'Settings')),
-          ],
-        ),
-      ),
+      drawer: DrawerBut(),
     );
-  }
-  _buildHeader(){
-    return DrawerHeader(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(
-                    'assets/images/flutter.jpeg')
-            )
-        ),
-        child: Column(
-          children: [
-            CircleAvatar(
-              backgroundImage: AssetImage('assets/images/flutter.jpeg'),
-              radius: 40,
-            ),
-            SizedBox(height: 20,),
-            Text("John Cross")
-          ],
-        ));
-  }
-  _buildItem({
-    required IconData icon, required String title, required GestureTapCallback onTap}) {
-    return ListTile(
-      leading: Icon(icon),
-      title: Text(title),
-      onTap: onTap,
-      minLeadingWidth: 5,
-    );
+  //     drawer: Drawer(
+  //       child: ListView(
+  //         children: [
+  //           _buildHeader(),
+  //           _buildItem(icon: Icons.home, title: 'Home', onTap: ()=> Navigator.pop(context)),
+  //           _buildItem(icon: Icons.notifications, title: 'Notif', onTap: ()=> Navigator.pushNamed(context, 'Notifications')),
+  //           _buildItem(icon: Icons.person, title: 'Profile', onTap: ()=> Navigator.pop(context, 'Profile')),
+  //           _buildItem(icon: Icons.settings, title: 'Settings', onTap: ()=> Navigator.pop(context, 'Settings')),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
+  // _buildHeader(){
+  //   return DrawerHeader(
+  //     duration: Duration(seconds: 2),
+  //       curve: Easing.legacy,
+  //       child: Column(
+  //         children: [
+  //           CircleAvatar(
+  //             backgroundImage: AssetImage('assets/images/flutter.jpeg'),
+  //               radius: 40,
+  //           ),
+  //           SizedBox(height: 20,),
+  //           Text("John Cross")
+  //         ],
+  //       ));
+  // }
+  // _buildItem({
+  //   required IconData icon, required String title, required GestureTapCallback onTap}) {
+  //   return ListTile(
+  //     leading: Icon(icon),
+  //     title: Text(title),
+  //     onTap: onTap,
+  //     minLeadingWidth: 40,
+  //     splashColor: Colors.grey,
+  //   );
   }
 }
