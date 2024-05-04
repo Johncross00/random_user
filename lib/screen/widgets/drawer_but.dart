@@ -9,7 +9,6 @@ class DrawerBut extends StatelessWidget {
       child: ListView(
         children: [
           _buildDrawerHeader(),
-          _buildDrawerHeader(),
           _buildListTile(
               icon: Icons.zoom_in,
               subtitle: 'Click to go to zoom',
