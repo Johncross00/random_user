@@ -11,23 +11,19 @@ class DrawerBut extends StatelessWidget {
           _buildDrawerHeader(),
           _buildListTile(
               icon: Icons.zoom_in,
-              subtitle: 'Click to go to zoom',
               title: 'Zoom',
               isEnable: true),
           _buildListTile(
               icon: Icons.library_add,
               title: 'title',
-              subtitle: 'subtitle',
               isEnable: true),
           _buildListTile(
               icon: Icons.nat,
-              subtitle: 'Click to Nat',
-              title: '',
+              title: 'Nat',
               isEnable: true),
           const Divider(),
           _buildListTile(
               icon: Icons.calendar_view_day,
-              subtitle: 'Click to view the calendra',
               title: 'Calendar',
               isEnable: true),
         ],
@@ -38,7 +34,7 @@ class DrawerBut extends StatelessWidget {
   _buildListTile(
       {required IconData icon,
       required String title,
-      required String subtitle,
+       String? subtitle,
       required bool isEnable}) {
     return ListTile(
       leading: Icon(icon),
