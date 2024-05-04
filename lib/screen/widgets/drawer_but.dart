@@ -24,7 +24,7 @@ class DrawerBut extends StatelessWidget {
               subtitle: 'Click to Nat',
               title: '',
               isEnable: false),
-          const Divider(color: Colors.lightGreenAccent, thickness: 5.0),
+          const Divider(),
           _buildListTile(
               icon: Icons.calendar_view_day,
               subtitle: 'Click to view the calendra',
