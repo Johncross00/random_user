@@ -8,13 +8,6 @@ class BotTab extends StatefulWidget {
 
 class _BotTabState extends State<BotTab> {
   int _selectedIndex = 0;
-  final List<Widget> _pages = [
-    Container(color: Colors.blue,),
-    Container(color: Colors.yellow,),
-    Container(color: Colors.black,),
-    Container(color: Colors.indigo,),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -25,7 +18,7 @@ class _BotTabState extends State<BotTab> {
             _selectedIndex = index;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.play_arrow), label: "Play"),
           BottomNavigationBarItem(icon: Icon(Icons.pause), label: "Pause"),
