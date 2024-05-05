@@ -92,6 +92,12 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: Container(
+                child: Center(
+                  child: ElevatedButton(onPressed: (){
+                    _displayBottomSheet(context);
+                  },
+                      child: Text("Press to open")),
+                ),
                 color: Colors.deepPurple,
               ),
             ),
@@ -123,6 +129,17 @@ class _HomePageState extends State<HomePage> {
     return const ListTile(
       leading: Icon(Icons.ac_unit),
       title: Text("Example"),
+    );
+  }
+
+  Future _displayBottomSheet(BuildContext context){
+    return showModalBottomSheet(
+      isScrollControlled: true,
+      backgroundColor: Colors.orange,
+      context: context,
+      builder: (context) => Container(
+        height: 200,
+      )
     );
   }
 }
