@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:random_user/screen/widgets/bottom_sheet.dart';
 import 'package:random_user/screen/widgets/bottomtab.dart';
 import 'package:random_user/screen/widgets/drawer_but.dart';
+import '../widgets/buildListTile.dart';
+import '../widgets/build_grid_view.dart';
+import '../widgets/row_container.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -47,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            const SizedBox(height: 15), // Espace de 15 pixels
+            const SizedBox(height: 15),
             Expanded(
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -68,78 +72,32 @@ class _HomePageState extends State<HomePage> {
                     },
                     child: const Icon(Icons.play_arrow),
                   ),
-                  Container(
-                    width: 160,
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.green,
-                  ),
+                  buildContainer(width: 140, color: Colors.orange),
+                  buildContainer(width: 140, color: Colors.green),
                   const AnimatedIcon(
                       icon: AnimatedIcons.arrow_menu,
                       progress: kAlwaysCompleteAnimation),
-                  Container(
-                    width: 160,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    width: 160,
-                    color: Colors.orange,
-                  ),
+                  buildContainer(width: 140, color: Colors.yellow),
+                  buildContainer(width: 140, color: Colors.pink),
                 ],
               ),
             ),
             Expanded(
               child: Container(
-                child: Center(
-                  child: ElevatedButton(onPressed: (){
-                    _displayBottomSheet(context);
-                  },
-                      child: Text("Press to open")),
-                ),
                 color: Colors.deepPurple,
+                child: const Center(
+                  child: BottomSheetBar(),
+                ),
               ),
             ),
             Expanded(
-              child: GridView.count(
-                crossAxisCount: 5,
-                mainAxisSpacing: 5,
-                crossAxisSpacing: 5,
-                scrollDirection: Axis.vertical,
-                children: List.generate(100, (index) {
-                  return Center(
-                    child: Text(
-                      'Item $index',
-                      style: Theme.of(context).textTheme.headlineSmall,
-                    ),
-                  );
-                }),
-              ),
+              child: buildGridView(context),
             ),
           ],
         ),
       ),
       bottomNavigationBar: const BotTab(),
       drawer: const DrawerBut(),
-    );
-  }
-
-  ListTile buildListTile() {
-    return const ListTile(
-      leading: Icon(Icons.ac_unit),
-      title: Text("Example"),
-    );
-  }
-
-  Future _displayBottomSheet(BuildContext context){
-    return showModalBottomSheet(
-      isScrollControlled: true,
-      backgroundColor: Colors.orange,
-      context: context,
-      builder: (context) => Container(
-        height: 200,
-      )
     );
   }
 }
