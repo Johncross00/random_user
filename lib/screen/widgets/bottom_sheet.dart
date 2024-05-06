@@ -19,6 +19,9 @@ class BottomSheetBar extends StatelessWidget {
         elevation: 50,
         enableDrag: true,
         showDragHandle: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(90), top: Radius.circular(90)),
+            side: BorderSide(color: Colors.red, width: 1)),
         context: context,
         builder: (context) => Container(
       height: 300,
