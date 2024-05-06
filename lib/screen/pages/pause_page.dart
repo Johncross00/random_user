@@ -1,9 +1,15 @@
+
 import 'package:flutter/material.dart';
+import '../widgets/build_grid_view.dart';
 class PausePage extends StatelessWidget {
-  const PausePage({super.key});
+  const PausePage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Expanded(
+      child: buildGridView(context),
+    );
   }
 }
