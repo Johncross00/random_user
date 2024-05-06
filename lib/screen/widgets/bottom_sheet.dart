@@ -13,11 +13,15 @@ class BottomSheetBar extends StatelessWidget {
 
   Future _displayBottomSheet(BuildContext context) {
     return showModalBottomSheet(
-      backgroundColor: Colors.black,
-        barrierColor: Colors.lightGreenAccent.withOpacity(0.5),
+      backgroundColor: Colors.cyanAccent,
+        barrierColor: Colors.black.withOpacity(0.5),
+        useSafeArea: true,
+        elevation: 50,
+        enableDrag: true,
+        showDragHandle: true,
         context: context,
         builder: (context) => Container(
-      height: 500,
+      height: 300,
     )
     );
   }
