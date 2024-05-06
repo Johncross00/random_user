@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:random_user/screen/pages/next_page.dart';
 import 'package:random_user/screen/widgets/bottom_sheet.dart';
 import 'package:random_user/screen/widgets/bottomtab.dart';
 import 'package:random_user/screen/widgets/drawer_but.dart';
-import '../widgets/buildListTile.dart';
+
 import '../widgets/build_grid_view.dart';
 import '../widgets/row_container.dart';
 
@@ -32,24 +33,9 @@ class _HomePageState extends State<HomePage> {
         color: Colors.grey,
         child: Column(
           children: [
-            Flexible(
+            const Flexible(
               flex: 1,
-              child: ListView(
-                children: <Widget>[
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                  buildListTile(),
-                ],
-              ),
+              child: NextPage(),
             ),
             const SizedBox(height: 15),
             Expanded(

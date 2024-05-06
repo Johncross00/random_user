@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../pages/home_page.dart';
+import '../pages/next_page.dart';
+import '../pages/pause_page.dart';
+import '../pages/play_page.dart';
+
 class BotTab extends StatefulWidget {
   const BotTab({super.key});
 
@@ -9,6 +14,12 @@ class BotTab extends StatefulWidget {
 
 class _BotTabState extends State<BotTab> {
   int _selectedIndex = 0;
+  final _pages = [
+      const HomePage(),
+      const PlayPage(),
+      const PausePage(),
+      const NextPage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
