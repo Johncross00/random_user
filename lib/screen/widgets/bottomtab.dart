@@ -1,35 +1,34 @@
 import 'package:flutter/material.dart';
 
-import '../pages/home_page.dart';
+import '../pages/exemple_page.dart';
 import '../pages/next_page.dart';
 import '../pages/pause_page.dart';
 import '../pages/play_page.dart';
 
 class BotTab extends StatefulWidget {
-  const BotTab({super.key});
+  final int selectedIndex;
+  final Function(int) onTap;
+  const BotTab({super.key, required this.selectedIndex, required this.onTap});
 
   @override
   State<BotTab> createState() => _BotTabState();
 }
 
 class _BotTabState extends State<BotTab> {
-  int _selectedIndex = 0;
+
   final _pages = [
-      const HomePage(),
-      const PlayPage(),
-      const PausePage(),
-      const NextPage(),
+    const ExemplePage(),
+    const PlayPage(),
+    const PausePage(),
+    const NextPage(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
+        currentIndex: widget.selectedIndex,
+        onTap: widget.onTap,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.play_arrow), label: "Play"),
