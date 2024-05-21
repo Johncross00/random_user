@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:random_user/screen/widgets/anim_dialog.dart';
 import '../widgets/buildListTile.dart';
 class NextPage extends StatelessWidget {
   const NextPage({
@@ -8,20 +9,23 @@ class NextPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
-        buildListTile(),
+    return Column(
+      children: [
+        Expanded(
+          child: ListView(
+            children: <Widget>[
+              buildListTile(),
+              buildListTile(),
+              buildListTile(),
+              buildListTile(),
+              buildListTile(),
+              Container(
+                child: AnimDialog(),
+              )
+            ],
+          ),
+        ),
+
       ],
     );
   }
