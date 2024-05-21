@@ -4,7 +4,7 @@ class AnimDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
+    return ElevatedButton(
         onPressed: (){},
         child: const Text("Open Dialog Animation"));
   }
