@@ -6,6 +6,14 @@ class AnimDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
         onPressed: (){},
-        child: Text("Open Dialog Animation"));
+        child: const Text("Open Dialog Animation"));
+  }
+
+  void _openAnimatedDialog(BuildContext context){
+    showGeneralDialog(context: context,
+        pageBuilder: (context, animation1, animation2){
+      return Container();
+        }
+        );
   }
 }
